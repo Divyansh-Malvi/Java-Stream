@@ -18,5 +18,21 @@ public class StreamFormatData {
         } catch (IOException ex) {
             System.out.println(ex);
         }
+        //read data from file
+        try {
+            FileInputStream fis = new FileInputStream(f);
+            BufferedInputStream bis = new BufferedInputStream(fis);
+            DataInputStream dis = new DataInputStream(bis);
+            String st;
+            while ((st=dis.readLine()) != null){
+                System.out.println(st);
+            }
+            dis.close();
+            bis.close();
+            fis.close();
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+
     }
 }
